@@ -1,12 +1,114 @@
-﻿@model ICollection<FirstTask.Models.Dtos.TipDto>
-@{
-    <h3>Tips from our stars</h3>
-    foreach (var tip in Model)
-    {
-        <video controls="controls">
-            <source src="@tip.VideoPath" type="@tip.VideoExtension" />
-        </video>
-        <h5>@tip.Title</h5>
-        <h5>@tip.description</h5>
-    }
-}
+﻿@model IEnumerable<TipDto>
+<body>
+
+    <!-- Start Container -->
+    <div class="row no-gutters">
+        <!-- this grid view is temporarily for web view but it's designed mainly for mobile view -->
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12 mx-auto">
+            <!-- stating main mobile design -->
+            <div class="main-container">
+                <!--Header-->
+                <div class="d-flex justify-content-between align-items-center bg-black py-3 fixed-top px-3">
+                    <span class="text-white fs-24" id="menu-button">
+                        <img src="assets/images/icons/menu.svg" alt="Menu">
+                    </span>
+                    <span class="d-flex align-items-center">
+                        <img src="assets/images/etisalatstarslogo.svg" alt="logo">
+                    </span>
+                    <a href="#">
+                        <img src="assets/images/icons/user-prof.svg" alt="">
+                    </a>
+                </div>
+                <!--End Header-->
+                <!-- Start side menu -->
+                <nav id="hide-menu" class="hide-menu">
+
+                    <!-- <div class="d-flex justify-content-between align-items-center bg-black py-3 px-3">
+                      <span class="d-flex align-items-center">
+                        <img src="assets/images/logo.png" alt="logo" class="mr-2">
+                        <span class="fs-20 font-weight-bold">Etisalat Stars</span>
+                      </span>
+                      <img id="close_menu" src="assets/images/icons/cancel.png" alt="Close">
+                    </div> -->
+
+                    <div class="bg-black d-flex justify-content-between align-items-center px-4 py-4">
+                        <div class="d-flex justify-content-start align-items-center">
+                            <img src="assets/images/icons/user-prof.svg" alt="logo" class="mr-2" width="54" height="54">
+                            <div>
+                                <span class="d-block primary-text fs-16 font-weight-bold">0122 000 0000</span>
+                                <span class="d-block fs-16 font-weight-bold">1100 Points</span>
+                            </div>
+                        </div>
+                        <img id="close_menu" src="assets/images/icons/cancel.svg" alt="Close" class="cursor-pointer">
+                    </div>
+
+                    <div class="px-4">
+                        <ul class="list-unstyled">
+                            <li class="border-bottom">
+                                <a href="#" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="border-bottom">
+                                <a href="tips.html" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                                    <span>Tips from Our Stars</span>
+                                </a>
+                            </li>
+                            <li class="border-bottom">
+                                <a href="missions.html" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                                    <span>Acting Missions</span>
+                                </a>
+                            </li>
+                            <li class="border-bottom">
+                                <a href="talent-videos.html" class="menu-link fs-16 py-3 font-weight-bold d-block text-white">
+                                    <span>Talent Videos</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </nav>
+                <!-- End side menu -->
+                <!--Start Page Content -->
+                <div class="content">
+
+                    <!-- Section acting mission -->
+                    <div class="Play-right">
+                        <!-- title -->
+                        <span class="d-block fs-16 font-weight-bold my-3 px-3 text-center mb-3">Tips from Our Stars</span>
+
+                        <div class="row mx-0">
+                            <!-- Repeatable Div -->
+                            @foreach (var tip in Model)
+                            {
+                                <div class="col-12 mb-3">
+                                    <a>
+                                        <div class="w-100">
+                                            <img src="assets/images/0001.png" alt="" class="w-100 d-block" height="200">
+                                            <img src="assets/images/icons/video.svg" alt="" class="player-icon">
+                                            <span class="d-block fs-16 font-weight-bold my-2">
+                                                @tip.Title
+                                            </span>
+                                            <span class="d-block fs-14 mb-3">
+                                                @tip.description
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!--End Page Content -->
+
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/progressbar.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body> 

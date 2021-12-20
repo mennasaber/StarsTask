@@ -3,8 +3,10 @@
     <h3>Tips from our stars</h3>
     foreach (var tip in Model)
     {
-        <h4>@tip.Title</h4>
+        <video controls="controls">
+            <source src="@tip.VideoPath" type="@tip.VideoExtension" />
+        </video>
+        <h5>@tip.Title</h5>
         <h5>@tip.description</h5>
-        <h5>@tip.VideoPath</h5>
     }
 }

@@ -1,0 +1,10 @@
+﻿@model ICollection<FirstTask.Models.Dtos.TipDto>
+@{
+    <h3>Tips from our stars</h3>
+    foreach (var tip in Model)
+    {
+        <h4>@tip.Title</h4>
+        <h5>@tip.description</h5>
+        <h5>@tip.VideoPath</h5>
+    }
+}

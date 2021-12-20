@@ -10,6 +10,7 @@ namespace FirstTask.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string description { get; set; }
+        public string ImagePath { get; set; }
         public string VideoPath { get; set; }
         public string VideoExtension { get; set; }
     }

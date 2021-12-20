@@ -15,6 +15,7 @@ namespace FirstTask.Configurations
             builder.Property(p => p.Title).IsRequired();
             builder.Property(p => p.description).IsRequired();
             builder.Property(p => p.VideoPath).IsRequired();
+            builder.Property(p => p.ImagePath).IsRequired();
             builder.Property(p => p.VideoExtension).IsRequired();
         }
     }
